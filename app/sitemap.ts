@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { getAllTerms } from "@/lib/sanity";
 
+export const dynamic = "force-static";
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const terms = await getAllTerms();
 
