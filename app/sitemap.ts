@@ -7,7 +7,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const terms = await getAllTerms();
 
   const termEntries: MetadataRoute.Sitemap = terms.map((term) => ({
-    url: `https://clarity-ai.vercel.app/term/${term.slug.current}`,
+    url: `https://theaiclarity.com/term/${term.slug.current}`,
     lastModified: new Date(),
     changeFrequency: "monthly",
     priority: 0.8,
@@ -15,7 +15,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     {
-      url: "https://clarity-ai.vercel.app",
+      url: "https://theaiclarity.com",
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,

@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://clarity-ai.vercel.app/sitemap.xml",
+    sitemap: "https://theaiclarity.com/sitemap.xml",
   };
 }

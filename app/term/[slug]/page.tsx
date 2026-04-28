@@ -34,7 +34,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `https://theaiclarity.com/terms/${term.slug.current}`,
+      url: `https://theaiclarity.com/term/${term.slug.current}`,
       siteName: "ClarityAI",
       type: "article",
     },
