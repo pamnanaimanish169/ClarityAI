@@ -21,6 +21,8 @@ export type AiTerm = {
   realWorldAnalogy?: string;
   commonMisconception?: string;
   relatedTermsTags?: string[];
+  seoTitle?: string;
+  seoDescription?: string;
 };
 
 // ---------------------------------------------------------------------------
@@ -36,7 +38,9 @@ const TERM_FIELDS = `
   whatItMeans,
   realWorldAnalogy,
   commonMisconception,
-  relatedTermsTags
+  relatedTermsTags,
+  seoTitle,
+  seoDescription
 `;
 
 /**

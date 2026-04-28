@@ -23,15 +23,23 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const term = await getTermBySlug(slug);
-  if (!term) return { title: "Term not found" };
+  if (!term) return { title: "Term not found — ClarityAI" };
+
+  const title = term.seoTitle ?? `${term.title} — ClarityAI`;
+  const description = term.seoDescription ?? term.description;
 
   return {
-    title: term.title,
-    description: term.description,
+    title,
+    description,
     openGraph: {
-      title: `${term.title} | ClarityAI`,
-      description: term.description,
+      title,
+      description,
+      url: `https://theaiclarity.com/terms/${term.slug.current}`,
+      siteName: "ClarityAI",
       type: "article",
+    },
+    twitter: {
+      card: "summary",
     },
   };
 }
