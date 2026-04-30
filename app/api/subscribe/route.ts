@@ -49,7 +49,6 @@ export async function POST(request: Request) {
     if (!EMAIL_REGEX.test(email)) {
       return Response.json({ error: "Please provide a valid email address." }, { status: 400, headers: CORS_HEADERS });
     }
-
     const { error } = await resend.contacts.create({
       email,
       audienceId,

@@ -25,7 +25,8 @@ export default function EmailSignup() {
     setErrorMessage("");
 
     try {
-      const response = await fetch("/api/subscribe", {
+      const base = process.env.NEXT_PUBLIC_API_URL ?? "";
+      const response = await fetch(`${base}/api/subscribe`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: trimmedEmail }),
