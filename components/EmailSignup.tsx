@@ -26,7 +26,7 @@ export default function EmailSignup() {
 
     try {
       const base = process.env.NEXT_PUBLIC_API_URL ?? "";
-      const response = await fetch(`${base}/api/subscribe`, {
+      const response = await fetch(`${base}/api/subscribe/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: trimmedEmail }),
