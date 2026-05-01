@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { getTermBySlug, getAllTerms, type AiTerm } from "@/lib/sanity";
 import { BackButton } from "./back-button";
+import { BookmarkButton } from "@/components/BookmarkButton";
 
 // ---------------------------------------------------------------------------
 // SEO — per-term metadata generated server-side
@@ -170,16 +171,21 @@ export default async function TermPage({
             </span>
           </div>
 
-          {/* Term title */}
-          <h1
-            className="text-[clamp(3rem,9vw,6rem)] text-scholar-text leading-none tracking-tight mb-3"
-            style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
-              fontWeight: 900,
-            }}
-          >
-            {term.title}
-          </h1>
+          {/* Term title + bookmark */}
+          <div className="flex items-start justify-between gap-4 mb-3">
+            <h1
+              className="text-[clamp(3rem,9vw,6rem)] text-scholar-text leading-none tracking-tight"
+              style={{
+                fontFamily: "'Playfair Display', Georgia, serif",
+                fontWeight: 900,
+              }}
+            >
+              {term.title}
+            </h1>
+            <div className="pt-3 shrink-0">
+              <BookmarkButton slug={term.slug.current} />
+            </div>
+          </div>
 
           {/* One-liner */}
           <p
@@ -197,7 +203,7 @@ export default async function TermPage({
           <div className="flex items-center gap-3 mb-12">
             <div className="h-px w-12 bg-scholar-gold opacity-60" />
             <div
-              className="w-1.5 h-1.5 bg-scholar-gold rotate-45 flex-shrink-0"
+              className="w-1.5 h-1.5 bg-scholar-gold rotate-45 shrink-0"
               style={{ boxShadow: "0 0 6px var(--scholar-gold)" }}
             />
             <div className="h-px flex-1 bg-scholar-border" />

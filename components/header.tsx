@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BookmarkIcon } from "lucide-react";
 
 export function Header() {
   return (
@@ -34,6 +35,15 @@ export function Header() {
         </span>
 
         <div className="w-px h-4 bg-scholar-border hidden sm:block" />
+
+        <Link
+          href="/saved"
+          className="flex items-center gap-1.5 px-3 py-1.5 text-xs tracking-[0.12em] uppercase border border-scholar-border text-scholar-muted hover:border-scholar-gold hover:text-scholar-gold transition-all duration-150"
+          style={{ fontFamily: "'Space Mono', monospace" }}
+        >
+          <BookmarkIcon className="w-3.5 h-3.5" />
+          <span className="hidden sm:inline">Saved</span>
+        </Link>
 
         <button
           className="hidden md:block px-4 py-1.5 text-xs tracking-[0.12em] uppercase border border-scholar-gold text-scholar-gold hover:bg-scholar-gold hover:text-scholar-bg transition-all duration-200"

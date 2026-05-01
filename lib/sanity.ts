@@ -76,3 +76,14 @@ export async function getTermBySlug(slug: string): Promise<AiTerm | null> {
     { slug }
   );
 }
+
+/**
+ * Fetch multiple AI terms by an array of slugs (used by the /saved page).
+ */
+export async function getTermsBySlugs(slugs: string[]): Promise<AiTerm[]> {
+  if (!slugs.length) return [];
+  return sanityClient.fetch<AiTerm[]>(
+    `*[_type == "aiTerm" && slug.current in $slugs] | order(title asc) { ${TERM_FIELDS} }`,
+    { slugs }
+  );
+}
