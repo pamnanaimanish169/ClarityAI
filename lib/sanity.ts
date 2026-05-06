@@ -63,7 +63,9 @@ export async function searchTerms(query: string): Promise<AiTerm[]> {
  */
 export async function getAllTerms(): Promise<AiTerm[]> {
   return sanityClient.fetch<AiTerm[]>(
-    `*[_type == "aiTerm"] | order(title asc) { ${TERM_FIELDS} }`
+    `*[_type == "aiTerm"] | order(title asc) { ${TERM_FIELDS} }`,
+    {},
+    { cache: "no-store" }
   );
 }
 
