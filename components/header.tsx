@@ -37,6 +37,14 @@ export function Header() {
         <div className="w-px h-4 bg-scholar-border hidden sm:block" />
 
         <Link
+          href="/pro"
+          className="px-3 py-1.5 text-xs tracking-[0.12em] uppercase border border-[#F59E0B] text-[#F59E0B] hover:bg-[#F59E0B] hover:text-[#0F172A] transition-all duration-150"
+          style={{ fontFamily: "'Space Mono', monospace" }}
+        >
+          Pro
+        </Link>
+
+        <Link
           href="/saved"
           className="flex items-center gap-1.5 px-3 py-1.5 text-xs tracking-[0.12em] uppercase border border-scholar-border text-scholar-muted hover:border-scholar-gold hover:text-scholar-gold transition-all duration-150"
           style={{ fontFamily: "'Space Mono', monospace" }}
