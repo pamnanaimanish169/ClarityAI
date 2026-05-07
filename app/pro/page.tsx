@@ -44,7 +44,7 @@ export default function ProPage() {
 
     try {
       const base = process.env.NEXT_PUBLIC_API_URL ?? "";
-      const response = await fetch(`${base}/api/pro-waitlist`, {
+      const response = await fetch(`${base}/api/pro-waitlist/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: trimmedEmail }),
